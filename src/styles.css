@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.jumbotron{
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px #ccc;
+}
+
+.navbar-nav .active {
+    border-bottom: 3px solid red;
+}
+

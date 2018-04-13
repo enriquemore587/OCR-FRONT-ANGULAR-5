@@ -1,0 +1,102 @@
+<div class="container">
+<div class="row">
+  <div class="col-sm-12 col-md-12">
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <mat-form-field style="width: 100%">
+              <input matInput placeholder="Apellido paterno" [formControl]="validControl"
+                      [errorStateMatcher]="matcher">
+              <mat-hint>Vergara</mat-hint>
+              <mat-error *ngIf="validControl.hasError('required')">
+                  Apellido paterno es <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+            <mat-form-field style="width: 100%">
+              <input matInput placeholder="Apellido materno" [formControl]="validControl"
+                      [errorStateMatcher]="matcher">
+              <mat-hint>Ruiz</mat-hint>
+              <mat-error *ngIf="validControl.hasError('required')">
+                  Apellido materno es <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+            <mat-form-field style="width: 100%">
+              <input matInput placeholder="Nombre (s)" [formControl]="validControl"
+                      [errorStateMatcher]="matcher">
+              <mat-hint>Mariana</mat-hint>
+              <mat-error *ngIf="validControl.hasError('required')">
+                  Nombre es <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group col-md-6">
+          <mat-form-field style="width: 100%">
+              <mat-select placeholder="Genero"  [formControl]="validControl"
+              [errorStateMatcher]="matcher">
+                <mat-option *ngFor="let food of foods" [value]="food.value" >
+                  {{ food.viewValue }}
+                </mat-option>
+              </mat-select>
+              <mat-hint>Genero</mat-hint>
+              <mat-error *ngIf="validControl.hasError('required')">
+                  Genero es <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-8">
+            <mat-form-field style="width: 100%">
+              <input matInput placeholder="JORC810445HDFRMR03" [formControl]="validControl"
+                      [errorStateMatcher]="matcher">
+              <mat-hint>CURP</mat-hint>
+              <mat-error *ngIf="validControl.hasError('required')">
+                  CURP es <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group col-md-4">
+            <mat-form-field style="width: 100%">
+              <input matInput placeholder="HERC810615" [formControl]="validControl"
+                      [errorStateMatcher]="matcher">
+              <mat-hint>RFC</mat-hint>
+              <mat-error *ngIf="validControl.hasError('required')">
+                  RFC es <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+        </div>
+      </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+          <mat-form-field style="width: 100%">
+            <input matInput placeholder="México" [formControl]="validControl"
+                    [errorStateMatcher]="matcher">
+            <mat-hint>Estado</mat-hint>
+            <mat-error *ngIf="validControl.hasError('required')">
+                Estado es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+      </div>
+      <div class="form-group col-md-4">
+          <mat-form-field style="width: 100%">
+            <input matInput placeholder="HRRMCR81022509H600" [formControl]="validControl"
+                    [errorStateMatcher]="matcher">
+            <mat-hint>Clave electoral</mat-hint>
+            <mat-error *ngIf="validControl.hasError('required')">
+                Clave electoral es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+      </div>
+    </div>
+    <button mat-button type="submit" >Upload!</button>
+  </form>
+  </div>
+</div>
+
+</div>
