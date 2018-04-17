@@ -1,16 +1,16 @@
 <div class="container">
+  <div class="form-row">
+    <div class="col-sm-8" >
+      <label for="file">Selecciona foto</label>
+      <input type="file" (change)="fileChangeEvent($event)" matTooltip="SELECCIONAR FOTOGRAFÍA DE INE!">
+    </div>
+    <div class="col-sm-4">
+      <button mat-button (click)="onRead()" matTooltip="LEER DATOS DE LA IMAGEN!" color="primary">Leer datos</button>
+    </div>
+  </div>
   <div class="row">
     <div class="col-sm-12 col-md-12">
       <form>
-        <div class="form-row">
-          <div class="col-sm-8" >
-            <label for="file">Selecciona foto</label>
-            <input type="file" (change)="fileChangeEvent($event)" matTooltip="SELECCIONAR FOTOGRAFÍA DE INE!">
-          </div>
-          <div class="col-sm-4">
-            <button mat-button (click)="onRead()" matTooltip="LEER FATOS DE LA IMAGEN!" color="primary">Leer datos</button>
-          </div>
-        </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <mat-form-field style="width: 100%">

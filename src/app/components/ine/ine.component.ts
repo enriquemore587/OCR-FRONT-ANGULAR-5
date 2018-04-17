@@ -75,6 +75,7 @@ export class IneComponent implements OnInit {
 
   ngOnInit() {
   }
+
   onSubmit(){
     console.log("Se guardara");
   }

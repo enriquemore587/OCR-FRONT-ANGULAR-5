@@ -1,33 +1,74 @@
 <div class="container">
+  <div class="row">
+      <div class="col-sm-8" >
+        <label for="file">Selecciona foto</label>
+        <input type="file" (change)="fileChangeEvent($event)" matTooltip="SELECCIONAR FOTOGRAFÍA DE COMPROBANTE!">
+      </div>
+      <div class="col-sm-4">
+        <button mat-button (click)="onRead()" matTooltip="LEER DATOS DE LA IMAGEN!" color="primary">Leer datos</button>
+      </div>
+  </div>
 <div class="row">
   <div class="col-sm-12 col-md-12">
     <form>
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="inputEmail4">Codigo postal</label>
-          <input type="text" class="form-control" placeholder="10100">
+          <mat-form-field style="width: 100%">
+              <input matInput placeholder="Codigo Postal" [(ngModel)]="obj.cp" [formControl]="validControlCodigoPostal" [errorStateMatcher]="matcher">
+              <mat-hint>Codigo Postal</mat-hint>
+              <mat-error *ngIf="validControlCodigoPostal.hasError('required')">
+                Codigo Postal
+                <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
         </div>
         <div class="form-group col-md-6">
-          <label for="inputEmail4">Estado</label>
-          <input type="text" class="form-control" placeholder="México">
+          <mat-form-field style="width: 100%">
+            <input matInput placeholder="Estado" [(ngModel)]="obj.estado" [formControl]="validControlEstado" [errorStateMatcher]="matcher">
+            <mat-hint>Estado</mat-hint>
+            <mat-error *ngIf="validControlEstado.hasError('required')">
+              Estado
+              <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="inputEmail4">Municipio</label>
-          <input type="text" class="form-control" placeholder="Ecatepec de Morelos">
+          <mat-form-field style="width: 100%">
+            <input matInput placeholder="Municipio" [(ngModel)]="obj.municipio" [formControl]="validControlMunicipio" [errorStateMatcher]="matcher">
+            <mat-hint>Municipio</mat-hint>
+            <mat-error *ngIf="validControlMunicipio.hasError('required')">
+              Municipio
+              <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
         </div>
         <div class="form-group col-md-6">
-          <label for="inputState">Colonias</label>
-          <select class="form-control">
-            <option selected>Seleccionar...</option>
-            <option>....</option>
-          </select>
+            <mat-form-field style="width: 100%">
+                <input type="text" placeholder="Colonias" matInput [formControl]="validControlColonias" [matAutocomplete]="auto">
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of colonias" [value]="option">
+                    {{ option }}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <mat-form-field style="width: 100%">
+            <input matInput placeholder="Calle" [(ngModel)]="obj.calle" [formControl]="validControlCalle" [errorStateMatcher]="matcher">
+            <mat-hint>Calle</mat-hint>
+            <mat-error *ngIf="validControlCalle.hasError('required')">
+              Calle
+              <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
         </div>
       </div>
     <button type="submit" class="btn btn-light">Upload</button>
   </form>
   </div>
 </div>
-
 </div>
