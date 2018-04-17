@@ -55,6 +55,7 @@ export class LoginComponent implements OnInit {
         if(resp.status == 0){
           registerForm.reset();
           localStorage.setItem('auth', resp.data.token);
+          localStorage.setItem('email', this.user.email);
           this._router.navigate(['/']);
         }
       },

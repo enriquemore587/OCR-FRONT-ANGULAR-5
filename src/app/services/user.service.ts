@@ -31,6 +31,13 @@ export class UserService{
     .map(res => res.json());
   }
 
+  savePersonalData(personal_data_to_save){
+    let params = JSON.stringify(personal_data_to_save);
+    let headers = new Headers({'content-Type': 'application/json', 'Authorization':  localStorage.getItem('auth')});
+
+    return this._http.post(this.url+'users/personal', params, {headers: headers});
+  }
+
   getAuth() {
     let auth = localStorage.getItem('auth');
     

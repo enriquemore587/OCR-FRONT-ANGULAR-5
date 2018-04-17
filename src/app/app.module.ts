@@ -21,7 +21,7 @@ import { ComprobanteComponent } from './components/comprobante/comprobante.compo
 import { NssComponent } from './components/nss/nss.component';
 import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
 import { RegisterComponent } from './components/register/register.component';
-
+import { ConfirmacionCarga } from './components/ine/ine.component';
 
 
 
@@ -117,7 +117,8 @@ export class DemoMaterialModule {}
     ComprobanteComponent,
     NssComponent,
     TarjetaComponent,
-    RegisterComponent
+    RegisterComponent,
+    ConfirmacionCarga
   ],
   imports: [
     BrowserModule,
@@ -129,6 +130,7 @@ export class DemoMaterialModule {}
     ModuloCuentaModule,
     DemoMaterialModule
   ],
+  entryComponents: [ConfirmacionCarga],
   providers: [appToutingProviders],
   bootstrap: [AppComponent]
 })

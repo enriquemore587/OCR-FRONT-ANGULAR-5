@@ -41,7 +41,7 @@
         </ul>
         <ul class="navbar-nav justify-content-end" *ngIf="auth">
             <li class="nav-item" routerLinkActive="active">
-              <a class="nav-link" routerLink="/cuenta-panel">Salir</a>
+              <a class="nav-link" (click)="logOut()" href>Salir</a>
             </li>
           </ul>
 

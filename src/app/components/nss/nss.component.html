@@ -1,18 +1,29 @@
 <div class="container">
-
-  <br>
-  <form class="form-inline">
-  <div class="form-group">
-    <label for="inputPassword6">Password</label>
-    <input type="text" id="inputPassword6" class="form-control mx-sm-3">
-    <small id="passwordHelpInline" class="text-muted">
-      Validación de Número del Seguro Social
-    </small>
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <form>
+        <div class="form-row">
+          <div class="col-sm-8" >
+            <label for="file">Selecciona foto</label>
+            <input type="file" (change)="fileChangeEvent($event)" matTooltip="SELECCIONAR FOTOGRAFÍA DE INE!">
+          </div>
+          <div class="col-sm-4">
+            <button mat-button (click)="onRead()" matTooltip="LEER FATOS DE LA IMAGEN!" color="primary">Leer datos</button>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <mat-form-field>
+              <input matInput placeholder="México" [(ngModel)]="nss" [formControl]="validControl" [errorStateMatcher]="matcher">
+              <mat-hint>Nss</mat-hint>
+              <mat-error *ngIf="validControl.hasError('required')">
+                Número de seguro social
+                <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
-  <hr>
-  <button type="submit" class="btn btn-light my-1">Upload</button>
-</form>
-</div>
-<div class="panel panel-default">
-  <!--main-cuenta></main-cuenta-->
 </div>
