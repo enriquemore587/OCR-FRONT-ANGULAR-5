@@ -106,6 +106,7 @@ export class IneComponent implements OnInit {
         name: name
       }
     });
+    this.onRead();
   }
 
   matcher = new MyErrorStateMatcher();

@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="form-row">
+    <div class="col-sm-8" >
+      <label for="file">Selecciona foto</label>
+      <input type="file" (change)="fileChangeEvent($event)" matTooltip="SELECCIONAR FOTOGRAFÍA DE INE!">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <mat-form-field style="width: 100%">
+              <input matInput placeholder="Apellido paterno" [(ngModel)]="objeto.paterno" [formControl]="validControlPaterno" [errorStateMatcher]="matcher">
+              <mat-hint>Apellido paterno</mat-hint>
+              <mat-error *ngIf="validControlPaterno.hasError('required')">
+                Apellido paterno es
+                <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="form-group col-md-6">
+            <mat-form-field style="width: 100%">
+              <input matInput placeholder="Apellido materno" [(ngModel)]="objeto.materno" [formControl]="validControlMaterno" [errorStateMatcher]="matcher">
+              <mat-hint>Apellido Materno</mat-hint>
+              <mat-error *ngIf="validControlMaterno.hasError('required')">
+                Apellido materno es
+                <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <mat-form-field style="width: 100%">
+              <input matInput placeholder="Nombre (s)"  [(ngModel)]="objeto.nombre" [formControl]="validControlNombre" [errorStateMatcher]="matcher">
+              <mat-hint>Nombre</mat-hint>
+              <mat-error *ngIf="validControlNombre.hasError('required')">
+                Nombre es
+                <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="form-group col-md-6">
+            <mat-form-field style="width: 100%">
+              <input matInput placeholder="CURP" [(ngModel)]="objeto.curp" [formControl]="validControlCurp" [errorStateMatcher]="matcher">
+              <mat-hint>CURP</mat-hint>
+              <mat-error *ngIf="validControlCurp.hasError('required')">
+                CURP es
+                <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <mat-form-field style="width: 100%">
+              <input matInput placeholder="Fecha de nacimiento" [(ngModel)]="objeto.fecha_nacimiento" [formControl]="validControlFNacimiento" [errorStateMatcher]="matcher">
+              <mat-hint>FECHA DE NACIMIENTO</mat-hint>
+              <mat-error *ngIf="validControlFNacimiento.hasError('required')">
+                Fecha de nacimiento es
+                <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="form-group col-md-4">
+            <mat-form-field style="width: 100%">
+              <input matInput placeholder="EXPEDICION" [(ngModel)]="objeto.fecha_expedicion" [formControl]="validControlfecha_expedicion" [errorStateMatcher]="matcher">
+              <mat-hint>EXPEDICION</mat-hint>
+              <mat-error *ngIf="validControlfecha_expedicion.hasError('required')">
+                Expedicion es
+                <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="form-group col-md-4">
+            <mat-form-field style="width: 100%">
+              <input matInput placeholder="CADUCIDADCURP" [(ngModel)]="objeto.fecha_caducidad" [formControl]="validControlfecha_caducidad" [errorStateMatcher]="matcher">
+              <mat-hint>CADUCIDAD</mat-hint>
+              <mat-error *ngIf="validControlfecha_caducidad.hasError('required')">
+                Fecha de caducdad es
+                <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

@@ -22,7 +22,7 @@ import { NssComponent } from './components/nss/nss.component';
 import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ConfirmacionCarga } from './components/ine/ine.component';
-
+import { PasaporteComponent } from './components/pasaporte/pasaporte.component';
 
 
 ///
@@ -66,6 +66,7 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
+
 @NgModule({
   exports: [
     CdkTableModule,
@@ -102,6 +103,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatToolbarModule,
     MatTooltipModule,
   ]
+  //,  declarations: [PasaporteComponent]
 })
 export class DemoMaterialModule {}
 ///////
@@ -118,7 +120,8 @@ export class DemoMaterialModule {}
     NssComponent,
     TarjetaComponent,
     RegisterComponent,
-    ConfirmacionCarga
+    ConfirmacionCarga,
+    PasaporteComponent
   ],
   imports: [
     BrowserModule,

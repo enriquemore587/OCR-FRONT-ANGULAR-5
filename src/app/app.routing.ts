@@ -8,6 +8,7 @@ import { ComprobanteComponent } from './components/comprobante/comprobante.compo
 import { NssComponent } from './components/nss/nss.component';
 import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
 import { RegisterComponent } from './components/register/register.component';
+import { PasaporteComponent } from './components/pasaporte/pasaporte.component';
 
 const appRoutes: Routes = [
   {path: '', component: WelcomeComponent},
@@ -19,7 +20,8 @@ const appRoutes: Routes = [
   {path: 'nss', component: NssComponent},
   {path: 'tarjetas', component: TarjetaComponent},
   {path: 'home', component: WelcomeComponent},
-  {path: '**', component: WelcomeComponent}
+  {path: 'pasaporte', component: PasaporteComponent},
+  { path: '**', component: WelcomeComponent }
 ];
 
 export const appToutingProviders: any[] =[];

@@ -60,6 +60,7 @@ export class NssComponent implements OnInit {
         name: name
       }
     });
+    this.onRead();
   }
 
   matcher = new MyErrorStateMatcher();

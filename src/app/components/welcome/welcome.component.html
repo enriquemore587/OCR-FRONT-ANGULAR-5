@@ -3,6 +3,9 @@
     <h1>O. C. R.</h1>
     <p>Técnicamente, OCR significa Reconocimiento Óptico de Caracteres, lo cual es una versión electrónica, o mecánica, de imágenes de texto escrito a mano, impreso o texto mecanografiado a máquina. La técnica es ampliamente utilizada para el ingreso de datos de diferentes tipos de registros en papel, ya sean facturas, pasaportes, documentos comerciales, letras o impresiones de los datos estáticos.</p>
     <p>Cuando se digitaliza un texto, puede buscarse y editar de manera electrónica, ser almacenado de forma más compacta, y verse en línea. Permite que los datos puedan ser utilizados en procesos computarizados tales como texto-a-voz, traducción automática y minería de texto.</p>
-    <p><button type="button" class="btn btn-link"  routerLink="/login" *ngIf="!auth">ENTRAR</button><button type="button" class="btn btn-link" routerLink="/cuenta-panel" *ngIf="auth">Mis datos</button></p>
+    <p><button type="button" class="btn btn-link"  routerLink="/login" *ngIf="!auth">ENTRAR</button>
+      <button type="button" class="btn btn-link"  routerLink="/registro" *ngIf="!auth">REGISTRAR</button>
+      <button type="button" class="btn btn-link" routerLink="/cuenta-panel" *ngIf="auth">Mis datos</button>
+    </p>
   </div>
 </div>

@@ -66,12 +66,12 @@ export class ComprobanteComponent implements OnInit {
       this.obj.municipio = result.data.municipio;
       this.obj.calle = result.data.calle;
       this.colonias = result.data.colonias;
-
     })
   }
   public filesToUpload : Array<File>;
   fileChangeEvent(fileInput: any){
     this.filesToUpload = <Array<File>>fileInput.target.files;
+    this.onRead();
   }
 
 }

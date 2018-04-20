@@ -11,7 +11,7 @@ const cuentaRoutes : Routes = [
     path: 'cuenta-panel',
     component: MainCuentaComponent,
     children: [
-      {path: '', redirectTo: 'editar', pathMatch: 'full'},
+      {path: '', redirectTo: 'mostrar', pathMatch: 'full'},
       {path: 'editar', component: EditarCuentaComponent},
       {path: 'mostrar', component: MostrarCuentaComponent}
     ]

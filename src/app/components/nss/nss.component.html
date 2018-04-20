@@ -4,12 +4,12 @@
       <form>
         <div class="form-row">
           <div class="col-sm-8" >
-            <label for="file">Selecciona foto</label>
-            <input type="file" (change)="fileChangeEvent($event)" matTooltip="SELECCIONAR FOTOGRAFÍA DE INE!">
+            <p>Capture Image: <input (change)="fileChangeEvent($event)" matTooltip="SELECCIONAR FOTOGRAFÍA!" type="file" accept="image/*" id="capture" capture="camera"> 
+            </p>
           </div>
-          <div class="col-sm-4">
+          <!--div class="col-sm-4">
             <button mat-button (click)="onRead()" matTooltip="LEER DATOS DE LA IMAGEN!" color="primary">Leer datos</button>
-          </div>
+          </div-->
         </div>
         <div class="form-row">
           <div class="form-group">
