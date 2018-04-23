@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
 
   matcher = new MyErrorStateMatcher();
 
-
+  hide = true;
   constructor(
     private _userService: UserService,
     private _router: Router

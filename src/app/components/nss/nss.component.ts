@@ -7,6 +7,8 @@ import { UserService } from  '../../services/user.service';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material';
 import { ConfirmacionCarga } from '../ine/ine.component';
 
+import swal from 'sweetalert2';
+
 //ERRORES DE FORMULARIO
 import { FormsModule, FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
@@ -45,13 +47,21 @@ export class NssComponent implements OnInit {
     this._uploadService.makeFilerequest(this.url+'ocr/nss', [], this.filesToUpload, this._userService.getAuth(), 'foto')
     .then((result:any)=>{
       this.nss = result.data.nss;
+      swal({
+        position: 'top-end',
+        type: 'success',
+        title: 'Lectura completada',
+        showConfirmButton: false,
+        timer: 1500
+      })
     })
   }
 
   public filesToUpload : Array<File>;
   fileChangeEvent(fileInput: any){
     this.filesToUpload = <Array<File>>fileInput.target.files;
-    this.openDialog(this.filesToUpload[0].name);
+    this.onRead();
+    //this.openDialog(this.filesToUpload[0].name);
   }
   
   openDialog(name) {

@@ -5,6 +5,8 @@ import { UserService } from  '../../services/user.service';
 import { FormsModule, FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import {  ErrorStateMatcher } from '@angular/material/core';
 
+import swal from 'sweetalert2';
+
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material';
 
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -92,12 +94,20 @@ export class IneComponent implements OnInit {
       this.validControlGenero = new FormControl(result.data.sexo, [
         Validators.required,
       ]);
+      swal({
+        position: 'top-end',
+        type: 'success',
+        title: 'Lectura completada',
+        showConfirmButton: false,
+        timer: 1500
+      })
     })
   }
   public filesToUpload : Array<File>;
   fileChangeEvent(fileInput: any){
     this.filesToUpload = <Array<File>>fileInput.target.files;
-    this.openDialog(this.filesToUpload[0].name);
+    this.onRead();
+   // this.openDialog(this.filesToUpload[0].name);
   }
   
   openDialog(name) {

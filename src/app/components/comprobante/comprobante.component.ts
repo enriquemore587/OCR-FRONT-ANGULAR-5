@@ -9,6 +9,8 @@ import { ErrorStateMatcher } from '@angular/material/core';
 
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 
+import swal from 'sweetalert2';
+
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -66,6 +68,13 @@ export class ComprobanteComponent implements OnInit {
       this.obj.municipio = result.data.municipio;
       this.obj.calle = result.data.calle;
       this.colonias = result.data.colonias;
+      swal({
+        position: 'top-end',
+        type: 'success',
+        title: 'Lectura completada',
+        showConfirmButton: false,
+        timer: 1500
+      })
     })
   }
   public filesToUpload : Array<File>;

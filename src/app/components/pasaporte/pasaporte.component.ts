@@ -8,6 +8,8 @@ import {  ErrorStateMatcher } from '@angular/material/core';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material';
 import { log } from 'util';
 
+import swal from 'sweetalert2';
+
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -72,7 +74,6 @@ export class PasaporteComponent implements OnInit {
   onRead(){
     this._uploadService.makeFilerequest(this.url+'ocr/pasaporte', [], this.filesToUpload, this._userService.getAuth(), 'foto')
     .then((result:any)=>{
-
       this.objeto.paterno = result.data.paterno;
       this.objeto.materno = result.data.materno;
       this.objeto.nombre = result.data.nombre;
@@ -80,13 +81,18 @@ export class PasaporteComponent implements OnInit {
       this.objeto.fecha_nacimiento = result.data['fecha_nacimiento'];
       this.objeto.fecha_expedicion = result.data['fecha_expedicion'];
       this.objeto.fecha_caducidad = result.data.fecha_caducidad;
-
+      swal({
+        position: 'top-end',
+        type: 'success',
+        title: 'Lectura completada',
+        showConfirmButton: false,
+        timer: 1500
+      })
     })
   }
   public filesToUpload : Array<File>;
   fileChangeEvent(fileInput: any){
     this.filesToUpload = <Array<File>>fileInput.target.files;
-    
     this.onRead();
   }
 

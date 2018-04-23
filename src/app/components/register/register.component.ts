@@ -21,7 +21,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class RegisterComponent implements OnInit {
   public user: User;
-
+  hide = true;
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
